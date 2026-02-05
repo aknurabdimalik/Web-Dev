@@ -1,0 +1,28 @@
+body {
+    background-color:yellow;
+    font-family: verdana;
+    font-size: 120%;
+
+}
+p{
+    color: red;
+    font-size: 10px;
+}
+#mytable{
+    color:black;
+    text-align:center;
+}
+a :link{
+    color: green;
+
+}
+a :visited{
+    color:pink;
+}
+a :hover{
+    color:red;
+    text-decoration:inderline;
+}
+.square{
+    list-style-type: square;
+}
