@@ -1,0 +1,21 @@
+<h2>⭐ Favorites ({{ favorites.length }})</h2>
+
+@if (favorites.length === 0) {
+  <p>No favorite products yet</p>
+} @else {
+  <div class="product-grid">
+    @for (fav of favorites; track fav.id) {
+      <app-product-card
+        [product]="fav"
+        (toggleFavorite)="toggleFavorite($event)">
+      </app-product-card>
+    }
+  </div>
+}
+
+<hr>
+
+<app-product-list
+  [products]="products"
+  (toggleFavorite)="toggleFavorite($event)">
+</app-product-list>

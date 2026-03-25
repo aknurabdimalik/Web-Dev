@@ -1,0 +1,12 @@
+<div class="card">
+
+  <img [src]="product.image" width="150">
+
+  <h3>{{ product.name }}</h3>
+  <p>{{ product.price }} $</p>
+
+  <button (click)="onToggleFavorite()">
+  {{ product.isFavorite ? '⭐ In Favorites' : '⭐ Add to Favorites' }}
+</button>
+
+</div>
