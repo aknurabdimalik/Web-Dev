@@ -1,0 +1,67 @@
+.home { text-align: center; }
+
+.hero {
+  background: #3a3a3a;
+  color: white;
+  padding: 4rem 2rem;
+  border-radius: 16px;
+  margin-bottom: 2rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: #ccc;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+}
+
+.btn-primary {
+  display: inline-block;
+  background: #666;
+  color: white;
+  padding: 0.9rem 2.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  background: #777;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.feature-card {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  border: 1px solid #e0e0e0;
+}
+
+.feature-card span { font-size: 2.5rem; }
+
+.feature-card h3 {
+  margin: 1rem 0 0.5rem;
+  color: #222;
+}
+
+.feature-card p { color: #777; line-height: 1.5; }
+
+img{
+  width: 50px;
+}
