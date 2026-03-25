@@ -1,0 +1,15 @@
+<div *ngIf="!selectedCategory" class="message">
+  Please select a category
+</div>
+
+<div *ngIf="selectedCategory && filteredProducts.length === 0" class="message">
+  No products in this category
+</div>
+
+<div class="grid">
+  <app-product-card
+    *ngFor="let product of filteredProducts"
+    [product]="product"
+    (deleteProduct)="deleteProduct($event)">
+  </app-product-card>
+</div>
