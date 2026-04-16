@@ -1,0 +1,32 @@
+<div *ngIf="!selectedCategory" class="message">
+  Please select a category
+</div>
+
+<div *ngIf="selectedCategory && filteredProducts.length === 0" class="message">
+  <div *ngIf="showOnlyFavorites && filteredProducts.length === 0" class="message">
+  No favorites yet ⭐
+  <br>
+  <button class="show-all-btn" (click)="toggleFavorites()">Show all products</button>
+</div>
+  No products in this category
+</div>
+<div class="favorites-control">
+
+<button (click)="toggleFavorites()">
+  {{ showOnlyFavorites ? 'Show all products' : 'Show only favorites ⭐' }}
+</button>
+
+<span class="badge">
+  Favorites: {{ favoritesCount }}
+</span>
+
+</div>
+
+<div class="grid">
+  <app-product-card
+  *ngFor="let product of filteredProducts"
+  [product]="product"
+  (deleteProduct)="deleteProduct($event)"
+  (favoriteChanged)="updateFavoritesCount()">
+  </app-product-card>
+</div>

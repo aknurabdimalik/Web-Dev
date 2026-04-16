@@ -1,0 +1,34 @@
+<div class="header">
+  <h1>ONLINE STORE</h1>
+
+  <div class="categories">
+    <button 
+      (click)="selectedCategory='Smartphones'"
+      [class.active]="selectedCategory === 'Smartphones'">
+      Smartphones
+    </button>
+
+    <button 
+      (click)="selectedCategory='Furniture'"
+      [class.active]="selectedCategory === 'Furniture'">
+      Furniture
+    </button>
+
+    <button 
+      (click)="selectedCategory='Laptops'"
+      [class.active]="selectedCategory === 'Laptops'">
+      Laptops
+    </button>
+
+    <button 
+      (click)="selectedCategory='Home appliances'"
+      [class.active]="selectedCategory === 'Home appliances'">
+      Home appliances
+    </button>
+  </div>
+</div>
+
+<app-product-list
+  [products]="products"
+  [selectedCategory]="selectedCategory">
+</app-product-list>

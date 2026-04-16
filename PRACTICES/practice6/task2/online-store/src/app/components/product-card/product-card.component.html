@@ -1,0 +1,47 @@
+<div class="card">
+  <a [href]="product.link" target="_blank">
+    <img [src]="mainImage" [alt]="product.name" class="main-img">
+  </a>
+
+  <div class="thumbnails">
+    <img *ngFor="let img of product.images; let i = index"
+         [src]="img"
+         (click)="selectImage(i)"
+         [class.active]="i === currentIndex"
+         alt="thumbnail">
+  </div>
+
+  <a [href]="product.link" target="_blank"><h3>{{ product.name }}</h3></a>
+  <p>{{ product.description }}</p>
+  <p class="price">{{ product.price}} ₸</p>
+
+  <button
+  class="favorite"
+  (click)="toggleFavorite()"
+  [attr.aria-pressed]="isFavorite"
+  [attr.aria-label]="isFavorite ? 'Remove from favorites' : 'Add to favorites'">
+
+  {{ isFavorite ? '⭐' : '☆' }}
+
+  </button>
+
+  <div class="rating">
+    <span *ngFor="let star of stars()">
+      <span *ngIf="star">★</span>
+      <span *ngIf="!star">☆</span>
+    </span>
+  </div>
+   
+  <div class="share">
+    <a [href]="'https://wa.me/?text=' + encode(product.link)" target="_blank">
+      <img src="https://avatars.mds.yandex.net/i?id=2cef568eb503d2191b556d42e98104549881d900-5244487-images-thumbs&n=13" alt="WhatsApp" class="icon">
+    </a>
+    <a [href]="'https://t.me/share/url?url=' + encode(product.link) + '&text=' + encode(product.name)" target="_blank">
+      <img src="https://avatars.mds.yandex.net/i?id=22b5118a7246d7fdf470bd7c9ae98ef4fde6d158-4391548-images-thumbs&n=13" alt="Telegram" class="icon">
+    </a>
+  </div>
+  <div class="actions">
+    <button (click)="like()">Likes {{ product.likes }}</button>
+    <button (click)="delete()"> Delete</button>
+  </div>
+</div>
