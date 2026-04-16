@@ -1,0 +1,28 @@
+.header {
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  color: white;
+  text-align: center;
+  padding: 25px 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.categories button {
+  margin: 5px;
+  padding: 10px 18px;
+  background: white;
+  color: #007bff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.categories button:hover {
+  background: #e6e6e6;
+}
+
+.categories button.active {
+  background: #fff;
+  color: #000;
+}
